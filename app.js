@@ -120,10 +120,10 @@ app.use((req, res, next) =>{
 
 
 
-app.get("/", (req, res) => {
-    res.render("./listings/index.ejs");  // Render your main page or homepage
-});
-
+app.get("/listings" ,wrapAsync( async(req, res) =>{
+    const AllListings =  await Listing.find({});
+    res.render("./listings/index.ejs", {AllListings})
+   }));
 
  
 
