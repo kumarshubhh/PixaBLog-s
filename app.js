@@ -138,10 +138,9 @@ app.use("/", userRouter)
 
 
 
-app.get("*", (req, res) => {
-    res.status(404).send("Page not found");
-});
-
+app.all("*", (req, res, next)=>{
+    next(new EpressErr(404, "page not Found"))
+})
 
 
 
