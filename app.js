@@ -132,7 +132,7 @@ app.use("/listings/:id/reviews", review)
 app.use("/Animals/:id/reviews", animalreview)
 app.use("/earths/:id/reviews", earthReview)
 
-app.use("/", userRouter)
+//app.use("/", userRouter)
 
 
 
