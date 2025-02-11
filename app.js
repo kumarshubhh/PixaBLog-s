@@ -139,7 +139,7 @@ app.use("/", userRouter)
 
 
 app.all("*", (req, res, next)=>{
-    next(new EpressErr(404, "page not Found"))
+    next(new ExpressError(404, "page not Found"))
 })
 
 
