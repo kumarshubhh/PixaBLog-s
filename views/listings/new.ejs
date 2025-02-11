@@ -1,0 +1,118 @@
+<% layout("/layouts/boilerPlate") %>
+<body>
+   
+    <div class="row mt-3">
+        <div class="col-8 offset-2">
+            
+    <h3>Create a New Nature Blogs</h3>
+   
+
+   
+    <form action="/listings" method="post"  class="needs-validation" novalidate>
+<div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input type="text" required name="listing[title]" placeholder="enter title" class="form-control">
+    <div class="valid-feedback">
+        Looks good!
+      </div>
+</div>
+
+
+<div class="mb-3">
+    <label for="description" class="form-label">Descriptions</label>
+    <textarea name="listing[description]" required id="" class="form-control"></textarea>
+    <div class="valid-feedback">
+        Looks good!
+      </div>
+
+</div>
+
+
+
+<div class="mb-3">
+    <label for="image" class="form-label">Image URL</label>
+    <input name="listing[image]" placeholder="enter image url" class="form-control">
+
+</div>
+
+
+
+
+<div class="mb-3">
+    <label for="country"  class="form-label">Country</label>
+    <input type="text" required name="listing[country]"  placeholder="enter country" class="form-control">
+    <div class="invalid-feedback">
+       Enter your country name 
+      </div>
+   
+
+</div>
+
+
+
+<div class="mb-3">
+    <label for="location" class="form-label">Location</label>
+    <input type="text"  required placeholder="enter a location" name="listing[location]" class="form-control">
+    <div class="invalid-feedback">
+        enter your Location
+      </div>
+
+</div>
+
+
+
+
+<div class="mb-3">
+  <label for="category" class="form-label">Category</label>
+  <select name="listing[category]" required class="form-select">
+      <option value="" selected disabled>Choose a Category</option>
+      <option value="mountains">Mountains</option>
+      <option value="Desert">Desert</option>
+      <option value="Animal">Animal</option>
+      <option value="water">water</option>
+      <option value="Trees">Trees</option>
+      <option value="Farms">Farms</option>
+      
+  </select>
+  <div class="invalid-feedback">
+      Please select a category.
+  </div>
+</div>
+
+
+
+
+
+<button class="btn btn-dark add-btn" >Add Blog's</button>
+<br><br>
+
+
+    </form>
+</div>
+</div>
+
+<script>
+
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+
+</script>
+
+</body>
+</html>

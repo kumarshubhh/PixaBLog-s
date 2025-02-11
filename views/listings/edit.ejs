@@ -1,0 +1,93 @@
+<% layout("/layouts/boilerPlate") %>
+<body>
+
+    <div class="row mt-3">
+        <div class="col-8 offset-2">
+            
+    <h3>Edit Your Blog's</h3>
+    <form action="/listings/<%= listing._id %>?_method=PUT" method="post" class="needs-validation" novalidate>
+
+        <div class="mb-3">
+            <label for="title">Title</label>
+            <input  class="form-control"  type="text" name="listing[title]"
+value=<%=listing.title%> required />
+<div class="invalid-feedback">
+    Enter your Title name 
+   </div>
+
+        </div>
+
+
+        <div class="mb-3"> 
+            <label for="description"> Descriptions</label>
+            <textarea  required class="form-control"  name="listing[description]" id="">  <%=listing.description%>  </textarea>
+            <div class="invalid-feedback">
+                Enter your Descriptions 
+               </div>
+        </div>
+
+
+ <div class="mb-3">
+    <label for="image">Image Link</label>
+    <input required class="form-control" name="listing[image]" placeholder="enter image url"    value=<%=listing.image%> >
+    <div class="invalid-feedback">
+        Enter your Blog's Image 
+       </div>
+
+</div>
+
+<div class="mb-3">
+    <label for="country">Country</label>
+    <input required type="text" class="form-control" name="listing[country]" value=<%=listing.country%>    placeholder="enter country">
+    <div class="invalid-feedback">
+        Enter your country name 
+       </div>
+</div>
+
+<div class="mb-3">
+<label for="location">Location</label>
+<input required class="form-control" type="text" value=<%=listing.location%> name="listing[location]"  >
+<div class="invalid-feedback">
+    Enter your Location name 
+   </div>
+
+</div>
+
+
+<button class="btn btn-dark add-btn mb-3">Update Blog's</button>
+
+
+    </form>
+   
+
+    </div>
+    </div>
+
+
+    <script>
+
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+
+    </script>
+
+
+
+  </body>
+</html>

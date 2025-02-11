@@ -1,0 +1,179 @@
+<% layout("/layouts/boilerPlate") %>
+<style>
+
+  #filters{
+    display: flex;
+    flex-wrap: wrap;
+    
+   
+  }
+
+.filter{
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  margin-right: 3rem;
+  opacity: 0.7;
+  
+ 
+  
+}
+
+.filter:hover{
+  opacity: 1;
+  background-color: green;
+  border: 2px solid white;
+  height: 3.5rem;
+  border-radius: 1rem;
+  color: white;
+
+  
+}
+.filter a{
+  text-decoration: none;
+  color: black;
+}
+
+
+
+.filter p{
+  font-size: 0.8rem;
+}
+
+</style>
+
+
+<body>
+
+<div id="filters">
+<div class="filter">
+
+  <div><a href="/listings/category/mountains"> <i class="fa-solid fa-mountain"></i></div>
+   
+    <p> Mountains</p> </a>
+</div>
+
+<div class="filter">
+
+<div><a href="/listings/category/Farms"> <i class="fa-solid fa-tractor"></i>   </div>
+   
+    <p> Farms</p> </a>
+</div>
+
+
+<div class="filter">
+<div><a href="/listings/category/water"> <i class="fa-solid fa-cloud-showers-water"></i>  </div>
+   
+    <p> Water</p> </a>
+</div>
+
+
+<div class="filter">
+  <div><a href="/listings/category/Animal"> <i class="fa-solid fa-dove"></i>  </div>
+     
+      <p>Animals</p> </a>
+  </div>
+
+
+
+  <div class="filter">
+    <div><a href="/listings/category/Desert"> <i class="fa-regular fa-sun"></i>  </div>
+       
+        <p>Desert</p> </a>
+    </div>
+
+
+    <div class="filter">
+      <div><a href="/listings/category/Trees"> <i class="fa-solid fa-tree"></i>  </div>
+         
+          <p> Trees</p> </a>
+      </div>
+
+
+      <div class="filter">
+        <div><a href="/listings/category/Farms">  <i class="fa-solid fa-sun-plant-wilt"></i> </div>
+           
+            <p>Flowers</p> </a>
+        </div>
+      
+      
+      
+        <div class="filter">
+          <div><a href="/listings/category/Desert"><i class="fa-solid fa-mound"></i>  </div>
+             
+              <p>Thar Places</p> </a>
+          </div>
+      
+      
+          <div class="filter">
+            <div><a href="/listings/category/Trees"> <i class="fa-brands fa-pagelines"></i>  </div>
+               
+                <p> Forest</p> </a>
+            </div>
+
+
+            <div class="filter">
+
+              <div> <a href="/listings/category/mountains">  <i class="fa-solid fa-mountain-city"></i> </div>
+               
+                <p> Mountains</p> </a>
+            </div>
+            
+            <div class="filter">
+            
+            <div><a href="/listings/category/Farms"> <i class="fa-solid fa-cow"></i>  </div>
+               
+                <p> Farms</p> </a>
+            </div>
+      
+      
+
+
+</div>
+  
+
+ <div class="overlay mt-3 " >
+  
+  <h1 class="">Stunning royalty-free images & royalty-free stock</h1>
+  </div>
+         
+
+  
+<!-- <a href="/category/Desert" class="btn btn-primary">Desert</a>
+<a href="/category/Farms" class="btn btn-primary">Farms</a> -->
+
+
+
+    <h4  class="mt-3 mb-3">Nature Images & Pictures</h4>
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3" >
+    
+    
+  
+    <% for(let listing of AllListings){ %>
+        <a href="/listings/<%= listing._id %>" class="listing-link">
+    <div class="card col listing-card " >
+        <img src="<%= listing.image %>" class="card-img-top" alt="listing_image" style="height: 20rem;">
+
+        <div class="card-img-overlay">
+          <i class="fa-regular fa-heart"></i> </div>
+
+        <div class="card-body">
+          <p class="card-text"> <b><%= listing.title %> </b></p>
+        </div>
+      </div>
+    </a>
+      <% } %>
+    </div>
+
+
+   
+       
+   
+
+
+   
+
+  
+
+</body>
+</html>

@@ -1,0 +1,166 @@
+body{
+    font-family: "Plus Jakarta Sans", serif !important;
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 100vh !important;
+  
+  
+}
+
+.container{
+    flex: 1 !important;
+}
+
+
+/* navbar */
+.navbar{
+    height: 5rem;
+    background-color: white !important;
+}
+
+.fa-mountain-sun{
+    color: rgb(11, 82, 11);
+    font-size: 2rem;
+}
+.nav-link{
+    color: #222222 !important;
+}
+
+
+/* footer */
+.f-info-links a{
+    text-decoration: none;
+    color: #222222;
+    
+}
+.f-info-socials,.f-info-brand{
+    width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+    
+    
+}
+
+.f-info-socials i{
+    font-size: 1.2rem;
+    margin-left:1rem ;
+}
+.f-info-socials i:hover{
+   color: rgb(11, 82, 11);
+}
+.f-info-links{
+    width: 100%;
+}
+
+
+.f-info-links a:hover{
+    text-decoration: underline;
+    color: rgb(11, 82, 11);}
+
+    .f-info{
+        text-align: center;
+        display: flex;
+        height: 8rem;
+        background-color: #ebebeb;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: space-evenly;
+
+    }
+
+
+    /* cards */
+   .listing-card{
+        border: none !important;
+        margin-bottom: 2rem;
+    }
+    .card-img-top{
+        border-radius: 1rem !important;
+        width: 100% !important;
+        object-fit: cover !important;
+    }
+    .card-body{
+        padding: 0 !important;
+    }
+    .card-text p {
+        font-weight: 400 !important;
+    }
+    .listing-link{
+        text-decoration: none !important;
+    }
+    .card-img-overlay{
+        opacity: 0;
+    }
+
+    .card-img-overlay:hover{
+        opacity: 1;
+       
+        color: white;
+    }
+
+    .add-btn{
+background-color: rgb(11, 82, 11) !important;
+border: none !important;
+    }
+
+    .btns{
+        display: flex;
+       
+    }
+
+    .show-card{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      
+         
+        
+    }
+
+.nav-link-Upload {
+    border: 2px solid none !important;
+    background-color: rgb(11, 82, 11) !important;
+    text-decoration: none;
+    color: white;
+    opacity: 0.8;
+    
+    
+    margin: 4px;
+    border-radius: 20px;
+    padding: 15px;
+
+}
+
+.nav-link-Upload:hover{
+    opacity: 1;
+    color: white !important;
+}
+
+.form-label{
+    color: rgb(11, 82, 11) !important;
+}
+
+.overlay h1{
+    display: inline;
+    border: 2px solid none;
+    background-color: rgb(11, 82, 11) !important;
+    border-radius: 20px;
+    color: white;
+    padding: 10px;
+   
+    margin-left: 50px;
+    opacity: 0.8;
+    
+   
+}
+
+.overlay h1:hover{
+    opacity: 1;
+}
