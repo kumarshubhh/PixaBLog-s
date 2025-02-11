@@ -120,6 +120,9 @@ app.use((req, res, next) =>{
 
 
 
+app.get("/", (req, res) => {
+    res.render("./listings/index.ejs");  // Render your main page or homepage
+});
 
 
  
@@ -128,13 +131,16 @@ app.use("/listings", listing)
 app.use("/earths", earth)
 app.use("/Animals", animal)
 app.use("/listings/:id/reviews", review)
-
 app.use("/Animals/:id/reviews", animalreview)
 app.use("/earths/:id/reviews", earthReview)
-
 app.use("/", userRouter)
 
 
+
+
+app.get("*", (req, res) => {
+    res.status(404).send("Page not found");
+});
 
 
 
