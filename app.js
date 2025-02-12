@@ -137,7 +137,7 @@ app.use("/", userRouter)
 
 
 app.all("*", (req, res, next)=>{
-    res.sendFile(path.join(__dirname, "/public/index.ejs"));
+    res.sendFile(path.join(__dirname, "public/index.ejs"));
 })
 
 
