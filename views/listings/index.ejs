@@ -1,46 +1,141 @@
 <% layout("/layouts/boilerPlate") %>
 <style>
 
-  #filters{
-    display: flex;
-    flex-wrap: wrap;
-    
-   
-  }
 
-.filter{
+#filters {
+  display: flex;
+  flex-wrap: nowrap; /* Prevents wrapping of filters */
+  justify-content: center; /* Centers filters horizontally */
+  gap: 1rem; /* Adds spacing between filter items */
+  overflow-x: auto; /* Allows horizontal scrolling if needed on smaller screens */
+}
+
+.filter {
   margin-top: 2rem;
   margin-bottom: 1rem;
   text-align: center;
-  margin-right: 3rem;
   opacity: 0.7;
-  
- 
-  
+  flex: 0 0 auto; /* Prevents the filters from stretching */
+  min-width: 6rem; /* Ensures each filter has a minimum width */
 }
 
-.filter:hover{
+
+
+
+.filter i {
+  font-size: 2rem;
+  color: black; /* Default icon color */
+  transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Hover Effect for Icons */
+.filter:hover i, 
+.filter:hover p  {
+  color: white; /* Change icon color to white on hover */
+}
+
+
+.filter:hover {
   opacity: 1;
   background-color: green;
   border: 2px solid white;
-  height: 3.5rem;
+  height: 3.7rem;
   border-radius: 1rem;
   color: white;
-
-  
 }
-.filter a{
+
+.filter a {
   text-decoration: none;
   color: black;
 }
 
-
-
-.filter p{
+.filter p {
   font-size: 0.8rem;
 }
 
+/* H1 Responsive Styles */
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 20px 0;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+    margin: 15px 0;
+  }
+
+  .filter i {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin: 10px 0;
+  }
+
+  .filter i {
+    font-size: 1.2rem;
+  }
+
+  .filter p {
+    font-size: 0.7rem;
+  }
+}
+
+/* Adjustments for card layout */
+.card {
+  margin: 0.5rem;
+}
+
+.card-img-top {
+  height: 20rem;
+}
+
+.card-body {
+  text-align: center;
+}
+
+/* Grid layout for the cards */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card.col {
+  flex: 1 1 calc(33.333% - 1rem); /* 3 items per row */
+  margin: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .card.col {
+    flex: 1 1 calc(50% - 1rem); /* 2 items per row */
+  }
+}
+
+@media (max-width: 480px) {
+  .card.col {
+    flex: 1 1 100%; /* 1 item per row */
+  }
+}
+  
+  
+
+
+
+  
+
+
+
 </style>
+
+
+
 
 
 <body>

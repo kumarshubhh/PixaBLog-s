@@ -1,68 +1,164 @@
-
 <style>
+  /* General Navbar Styles */
+.navbar {
+  background-color: #f8f9fa; /* Light background color */
+  border-bottom: 1px solid #ddd; /* Subtle border */
+  z-index: 1030;
+}
 
-  
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
 
-.btn-search{
+.navbar-brand i {
+  font-size: 1.5rem;
+  color: rgb(11, 82, 11);
+}
+
+.nav-link {
+  color: #333; /* Default text color */
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: rgb(11, 82, 11); /* Green hover color */
+}
+
+.nav-link-Upload {
+  /* color: rgb(11, 82, 11); */
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link-Upload:hover {
+  color: rgb(5, 110, 5);
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+/* Search Box */
+#searchForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#searchInput {
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+.btn-search {
   background-color: rgb(11, 82, 11);
   color: white;
   opacity: 0.8;
   border-radius: 25px;
-  padding: 0 1rem 0 1rem;
-}
-
-.btn-search:hover{
-  background-color: rgb(11, 82, 11);
-  color: white;
-  opacity: 1;
-}
-
-.btn-search i{
- display: inline !important;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
   margin-left: 0.5rem;
 }
 
-#searchInput{
-  border-radius: 25px;
-  padding: 0.5rem 3rem 0.5rem 3rem;
-  font-size: 1rem;
+.btn-search:hover {
+  opacity: 1;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
   .navbar-collapse {
-    background: white; /* Background fix */
+    background: white;
     padding: 10px;
     position: absolute;
     width: 100%;
     left: 0;
     top: 100%;
     z-index: 1000;
+    border-top: 1px solid #ddd;
   }
 
   .navbar-nav {
     flex-direction: column;
-    text-align: center;
+    align-items: center;
+    gap: 1rem;
   }
 
   .dropdown-menu {
     position: static;
     width: 100%;
+    border: none;
+    box-shadow: none;
     text-align: center;
   }
 
   .search-box {
     width: 100%;
+    margin-top: 1rem;
+  }
+
+  #searchForm {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  #searchInput {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+
+  .btn-search {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .nav-link-Upload {
+    font-size: 0.9rem;
   }
 }
 
+@media (max-width: 480px) {
+  .navbar-brand {
+    font-size: 1rem;
+  }
+
+  .navbar-brand i {
+    font-size: 1.2rem;
+  }
+
+  #searchInput {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .btn-search {
+    padding: 0.4rem;
+    font-size: 0.9rem;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+  }
+}
 
 </style>
 
-
-
 <nav class="navbar navbar-expand-md bg-body-tertiary border-bottom sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/listings"> <i class="fa-solid fa-mountain-sun"></i> &nbsp;PixaBlog's</a>
+    <a class="navbar-brand" href="/listings">
+      <i class="fa-solid fa-mountain-sun"></i> &nbsp;PixaBlog's
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -71,66 +167,45 @@
         <li class="nav-item">
           <a class="nav-link" href="/listings">Home</a>
         </li>
-        
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle"  id="exploreDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" id="exploreDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Explore It
           </a>
-          <ul class="dropdown-menu"  aria-labelledby="exploreDropdown" >
+          <ul class="dropdown-menu" aria-labelledby="exploreDropdown">
             <li><a class="dropdown-item" href="/Animals">Animal</a></li>
             <li><a class="dropdown-item" href="/earths">Mountains & Places</a></li>
           </ul>
         </li>
       </ul>
 
-
-
       <!-- Search Box -->
-<div class="navbar-nav ms-auto">
-
-      <form action="/listings/search" method="get" class="d-flex w-10 mx-auto" role="search" id="searchForm">
-        <input required class="form-control me-2 w-75" type="search" placeholder=" Search destinations"  id="searchInput" name="query">
-        <button class="btn btn-search ">   Search </button>
-        
-      </form>
-    </div>
+      <div class="navbar-nav ms-auto">
+        <form action="/listings/search" method="get" class="d-flex w-10 mx-auto" role="search" id="searchForm">
+          <input required class="form-control me-2 w-75" type="search" placeholder="Search destinations" id="searchInput" name="query">
+          <button class="btn btn-search">Search</button>
+        </form>
+      </div>
 
       <div class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link-Upload" style="text-decoration: none;" href="/listings/new"><i class="fa-solid fa-cloud-arrow-up"></i>&nbsp;Upload Blog's</a>
+          <a class="nav-link-Upload" style="text-decoration: none;" href="/listings/new">
+            <i class="fa-solid fa-cloud-arrow-up"></i>&nbsp;Upload Blog's
+          </a>
         </li>
-        
-        <% if (!currUser){ %>
-        <li class="nav-item">
-          <a class="nav-link-Upload" href="/signup"> Join </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link-Upload" href="/login"> Log in </a>
-        </li>
-        <% } %>
-        
-        <% if (currUser){ %>
-        <li class="nav-item">
-          <a class="nav-link-Upload" href="/logout">Log out</a>
-        </li>
+
+        <% if (!  currUser) { %>
+          <li class="nav-item">
+            <a class="nav-link-Upload" href="/signup">Join</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link-Upload" href="/login">Log in</a>
+          </li>
+        <% } else { %>
+          <li class="nav-item">
+            <a class="nav-link-Upload" href="/logout">Log out</a>
+          </li>
         <% } %>
       </div>
     </div>
   </div>
-</nav>
-
-<!-- Display Search Results -->
-<!-- <div class="container mt-4">
-  
-  <ul id="listingItems" class="navbar-nav">
-    <!-- Search results will be dynamically inserted here -->
-  </ul>
-</div> 
-
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> -->
-
-
-</script>
-
-</body>
-</html>
+</nav>     

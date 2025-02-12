@@ -108,6 +108,7 @@ passport.deserializeUser(User.deserializeUser());
 
 
 app.use((req, res, next) =>{
+   
     res.locals.success= req.flash("success" )
     res.locals.error= req.flash("error")
     res.locals.currUser = req.user;
@@ -120,10 +121,7 @@ app.use((req, res, next) =>{
 
 
 
-app.get("/listings" ,wrapAsync( async(req, res) =>{
-    const AllListings =  await Listing.find({});
-    res.render("./listings/index.ejs", {AllListings})
-   }));
+
 
  
 
@@ -139,7 +137,7 @@ app.use("/", userRouter)
 
 
 app.all("*", (req, res, next)=>{
-    next(new ExpressError(404, "page not Found"))
+    res.sendFile(path.join(__dirname, "/public/index.ejs"));
 })
 
 
