@@ -121,7 +121,9 @@ app.use((req, res, next) =>{
 
 
 
-
+app.get("/", (req, res) => {
+    res.render("./listings/index.ejs"); // Renders views/index.ejs
+});
 
  
 
@@ -137,7 +139,7 @@ app.use("/", userRouter)
 
 
 app.all("*", (req, res, next)=>{
-    res.sendFile(path.join(__dirname, "public/index.ejs"));
+    next(new ExpressError(404, "page not Found"))
 })
 
 
