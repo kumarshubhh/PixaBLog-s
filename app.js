@@ -121,8 +121,13 @@ app.use((req, res, next) =>{
 
 
 
-app.get("/", (req, res) => {
-    res.render("./listings/index.ejs"); // Renders views/index.ejs
+app.get("/listings", async (req, res, next) => {
+    try {
+        const AllListings = await Listing.find({});
+        res.render("./listings/index", { AllListings });
+    } catch (err) {
+        next(err);
+    }
 });
 
  
