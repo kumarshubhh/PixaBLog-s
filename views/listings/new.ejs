@@ -1,118 +1,112 @@
 <% layout("/layouts/boilerPlate") %>
-<body>
-   
-    <div class="row mt-3">
-        <div class="col-8 offset-2">
-            
-    <h3>Create a New Nature Blogs</h3>
-   
+<style>
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    .card-img-top {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    h3 {
+        font-size: 2rem;
+        text-align: center;
+        margin: 20px 0;
+    }
+    .container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+    }
+    .form-control, .form-select {
+        font-size: 1rem;
+        padding: 10px;
+    }
+    @media (max-width: 768px) {
+        h3 {
+            font-size: 1.75rem;
+            margin: 15px 0;
+        }
+        .container {
+            padding: 10px;
+        }
+    }
+    @media (max-width: 480px) {
+        h3 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            line-height: 1.3;
+        }
+        .form-control, .form-select {
+            font-size: 0.9rem;
+            padding: 8px;
+        }
+    }
+</style>
 
-   
-    <form action="/listings" method="post"  class="needs-validation" novalidate>
-<div class="mb-3">
-    <label for="title" class="form-label">Title</label>
-    <input type="text" required name="listing[title]" placeholder="enter title" class="form-control">
-    <div class="valid-feedback">
-        Looks good!
-      </div>
-</div>
-
-
-<div class="mb-3">
-    <label for="description" class="form-label">Descriptions</label>
-    <textarea name="listing[description]" required id="" class="form-control"></textarea>
-    <div class="valid-feedback">
-        Looks good!
-      </div>
-
-</div>
-
-
-
-<div class="mb-3">
-    <label for="image" class="form-label">Image URL</label>
-    <input name="listing[image]" placeholder="enter image url" class="form-control">
-
-</div>
-
-
-
-
-<div class="mb-3">
-    <label for="country"  class="form-label">Country</label>
-    <input type="text" required name="listing[country]"  placeholder="enter country" class="form-control">
-    <div class="invalid-feedback">
-       Enter your country name 
-      </div>
-   
-
-</div>
-
-
-
-<div class="mb-3">
-    <label for="location" class="form-label">Location</label>
-    <input type="text"  required placeholder="enter a location" name="listing[location]" class="form-control">
-    <div class="invalid-feedback">
-        enter your Location
-      </div>
-
-</div>
-
-
-
-
-<div class="mb-3">
-  <label for="category" class="form-label">Category</label>
-  <select name="listing[category]" required class="form-select">
-      <option value="" selected disabled>Choose a Category</option>
-      <option value="mountains">Mountains</option>
-      <option value="Desert">Desert</option>
-      <option value="Animal">Animal</option>
-      <option value="water">water</option>
-      <option value="Trees">Trees</option>
-      <option value="Farms">Farms</option>
-      
-  </select>
-  <div class="invalid-feedback">
-      Please select a category.
-  </div>
-</div>
-
-
-
-
-
-<button class="btn btn-dark add-btn" >Add Blog's</button>
-<br><br>
-
-
+<div class="container mt-4">
+    <h3 class="text-center">Create a New Nature Blog</h3>
+    <form action="/listings" method="post" class="needs-validation" novalidate>
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" required name="listing[title]" placeholder="Enter title" class="form-control">
+            <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="listing[description]" required class="form-control"></textarea>
+            <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Image URL</label>
+            <input name="listing[image]" placeholder="Enter image URL" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="country" class="form-label">Country</label>
+            <input type="text" required name="listing[country]" placeholder="Enter country" class="form-control">
+            <div class="invalid-feedback">Enter your country name</div>
+        </div>
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" required name="listing[location]" placeholder="Enter a location" class="form-control">
+            <div class="invalid-feedback">Enter your location</div>
+        </div>
+        <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            <select name="listing[category]" required class="form-select">
+                <option value="" selected disabled>Choose a Category</option>
+                <option value="mountains">Mountains</option>
+                <option value="desert">Desert</option>
+                <option value="animal">Animal</option>
+                <option value="water">Water</option>
+                <option value="trees">Trees</option>
+                <option value="farms">Farms</option>
+            </select>
+            <div class="invalid-feedback">Please select a category.</div>
+        </div>
+        <button class="btn btn-dark add-btn w-100">Add Blog</button>
     </form>
-</div>
 </div>
 
 <script>
-
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(function() {
-  'use strict';
-  window.addEventListener('load', function() {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.getElementsByClassName('needs-validation');
-    // Loop over them and prevent submission
-    var validation = Array.prototype.filter.call(forms, function(form) {
-      form.addEventListener('submit', function(event) {
-        if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-        form.classList.add('was-validated');
-      }, false);
-    });
-  }, false);
-})();
-
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            var forms = document.getElementsByClassName('needs-validation');
+            Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
