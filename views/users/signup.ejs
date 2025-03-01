@@ -1,99 +1,76 @@
-<!-- <% layout("/layouts/boilerPlate") %>
+<% layout("/layouts/boilerPlate") %>
 
-<div class="row mt-3">
-    <h1 class="col-6 offset-3">SignUp on PixaBlog's</h1>
-    <div class="col-6 offset-3 ">
-        <form action="/signup" method="post"></form>
+<style>
+    .bg-image {
+        background-size: cover;
+        background-position: center;
+        height: 300px;
+    }
+    .card {
+        margin-top: -100px;
+        backdrop-filter: blur(30px);
+    }
+    .form-container {
+        max-width: 500px;
+        margin: auto;
+    }
+    @media (max-width: 768px) {
+        .card {
+            margin-top: -50px;
+            padding: 20px;
+        }
+    }
+</style>
 
-
-        <div class="mb-3">
-            <label for="username" class="form-label">Username</label>
-            <input type="text" required name="username" placeholder="enter Username"  id="username"  class="form-control"  r>
-            <div class="valid-feedback">
-                Looks good!
-              </div>
-        </div>
-
-
-        <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" required name="email" placeholder="enter Email"  id="email" class="form-control">
-            
-        </div>
-
-
-        <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" required name="password" placeholder="enter Password"   id="password" class="form-control">
-            
-        </div>
-<button class="btn btn-success">SignUp</button>
-        </div>
-        </div> -->
-
-
-
-        <!-- Section: Design Block -->
+<!-- Section: Design Block -->
 <section class="text-center">
     <!-- Background image -->
     <div class="p-5 bg-image" style="
-          background-image: url('https://cdn.pixabay.com/photo/2016/06/17/04/26/mountain-1462655_1280.jpg') ;
-          height: 300px;
-          "></div>
+          background-image: url('https://cdn.pixabay.com/photo/2016/06/17/04/26/mountain-1462655_1280.jpg'); "></div>
     <!-- Background image -->
   
-    <div class="card mx-4 mx-md-5 shadow-5-strong bg-body-tertiary" style="
-          margin-top: -100px;
-          backdrop-filter: blur(30px);
-          ">
+    <div class="card mx-3 mx-md-5 shadow-lg bg-body-tertiary">
       <div class="card-body py-5 px-md-5">
   
         <div class="row d-flex justify-content-center">
-          <div class="col-lg-8">
-            <h2 class="fw-bold mb-5">Sign up on PixaBlog's</h2>
+          <div class="col-lg-6 form-container">
+            <h2 class="fw-bold mb-4">Sign up on PixaBlog's</h2>
             <form action="/signup" method="post">
-              <!-- 2 column grid layout with text inputs for the first and last names -->
-              <div class="">
-                <div class=" mb-4">
-                  <div data-mdb-input-init class="form-outline">
-                    <input type="text" id="username"  name="username" class="form-control" required/>
-                    <label class="form-label" for="username">User name</label>
-                  </div>
-                </div>
-                
+              <!-- Username input -->
+              <div class="form-outline mb-4">
+                <input type="text" id="username" name="username" class="form-control" required/>
+                <label class="form-label" for="username">User name</label>
               </div>
   
               <!-- Email input -->
-              <div data-mdb-input-init class="form-outline mb-4">
+              <div class="form-outline mb-4">
                 <input type="email" id="email" name="email" class="form-control" required />
                 <label class="form-label" for="email">Email address</label>
               </div>
   
               <!-- Password input -->
-              <div data-mdb-input-init class="form-outline mb-4">
-                <input type="password" id="password" name="password" class="form-control"  required/>
+              <div class="form-outline mb-4">
+                <input type="password" id="password" name="password" class="form-control" required/>
                 <label class="form-label" for="password">Password</label>
               </div>
   
               <!-- Checkbox -->
               <div class="form-check d-flex justify-content-center mb-4">
-                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
-                <label class="form-check-label" for="form2Example33">
+                <input class="form-check-input me-2" type="checkbox" value="" id="subscribe" checked />
+                <label class="form-check-label" for="subscribe">
                   Subscribe to our PixaBlog's
                 </label>
               </div>
   
               <!-- Submit button -->
-              <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">
+              <button type="submit" class="btn btn-primary btn-block mb-4">
                 Sign up
               </button>
   
-              
-             
             </form>
           </div>
         </div>
       </div>
     </div>
-  </section>
-  <!-- Section: Design Block -->
+</section>
+<!-- Section: Design Block -->
